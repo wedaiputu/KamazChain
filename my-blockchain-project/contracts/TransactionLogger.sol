@@ -1,3 +1,4 @@
+// smart-contract/contracts/TransactionLogger.sol
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
@@ -22,24 +23,12 @@ contract TransactionLogger {
         uint256[] calldata total_jumlahs,
         uint256[] calldata total_hargas
     ) public {
-        require(
-            agent_ids.length == total_jumlahs.length && total_jumlahs.length == total_hargas.length,
-            "Array length mismatch"
-        );
+        require(agent_ids.length == total_jumlahs.length && total_jumlahs.length == total_hargas.length, "Array length mismatch");
 
         for (uint256 i = 0; i < agent_ids.length; i++) {
             transactions.push(Transaction(agent_ids[i], total_jumlahs[i], total_hargas[i]));
             emit TransactionLogged(agent_ids[i], total_jumlahs[i], total_hargas[i]);
         }
-    }
-
-    function getTransaction(uint256 index) public view returns (Transaction memory) {
-        require(index < transactions.length, "Out of range");
-        return transactions[index];
-    }
-
-    function getTransactionCount() public view returns (uint256) {
-        return transactions.length;
     }
 
     function getAllTransactions() public view returns (Transaction[] memory) {

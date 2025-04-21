@@ -6,7 +6,7 @@ async function main() {
   console.log("Deploying contract from address:", deployer.address);
 
   // const Contract = await hre.ethers.getContractFactory("TransactionLogger");
-  const Contract = await hre.ethers.getContractFactory("DetailTransaction");
+  const Contract = await hre.ethers.getContractFactory("TransactionLogger");
   const contract = await Contract.deploy();
 
   await contract.waitForDeployment();

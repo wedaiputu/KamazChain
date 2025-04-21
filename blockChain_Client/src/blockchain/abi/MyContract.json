@@ -1,0 +1,185 @@
+{
+    "abi": [
+      {
+        "anonymous": false,
+        "inputs": [
+          {
+            "indexed": false,
+            "internalType": "uint256",
+            "name": "agent_id",
+            "type": "uint256"
+          },
+          {
+            "indexed": false,
+            "internalType": "uint256",
+            "name": "total_jumlah",
+            "type": "uint256"
+          },
+          {
+            "indexed": false,
+            "internalType": "uint256",
+            "name": "total_harga",
+            "type": "uint256"
+          }
+        ],
+        "name": "TransactionLogged",
+        "type": "event"
+      },
+      {
+        "inputs": [],
+        "name": "getAllTransactions",
+        "outputs": [
+          {
+            "components": [
+              {
+                "internalType": "uint256",
+                "name": "agent_id",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "total_jumlah",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "total_harga",
+                "type": "uint256"
+              }
+            ],
+            "internalType": "struct TransactionLogger.Transaction[]",
+            "name": "",
+            "type": "tuple[]"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "uint256",
+            "name": "index",
+            "type": "uint256"
+          }
+        ],
+        "name": "getTransaction",
+        "outputs": [
+          {
+            "components": [
+              {
+                "internalType": "uint256",
+                "name": "agent_id",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "total_jumlah",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "total_harga",
+                "type": "uint256"
+              }
+            ],
+            "internalType": "struct TransactionLogger.Transaction",
+            "name": "",
+            "type": "tuple"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [],
+        "name": "getTransactionCount",
+        "outputs": [
+          {
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "uint256",
+            "name": "agent_id",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "total_jumlah",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "total_harga",
+            "type": "uint256"
+          }
+        ],
+        "name": "logTransaction",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "uint256[]",
+            "name": "agent_ids",
+            "type": "uint256[]"
+          },
+          {
+            "internalType": "uint256[]",
+            "name": "total_jumlahs",
+            "type": "uint256[]"
+          },
+          {
+            "internalType": "uint256[]",
+            "name": "total_hargas",
+            "type": "uint256[]"
+          }
+        ],
+        "name": "logTransactionsBatch",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+          }
+        ],
+        "name": "transactions",
+        "outputs": [
+          {
+            "internalType": "uint256",
+            "name": "agent_id",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "total_jumlah",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "total_harga",
+            "type": "uint256"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      }
+    ],
+    "bytecode": "0x6080806040523460155761060a908161001b8239f35b600080fdfe6080604052600436101561001257600080fd5b60003560e01c806327506f53146103825780632e7700f01461036457806333ea3dc8146102c45780639ace38c21461026c578063b7b493e0146100e25763c401e23c1461005e57600080fd5b346100dd5760603660031901126100dd577f90b0bfc26dad846454f3c33277724ae4c0a1df636a370e3876fc9aef16cd62196024356004356100d86044356100bb6100a761051e565b848152856020820152826040820152610571565b604051938493846040919493926060820195825260208201520152565b0390a1005b600080fd5b346100dd5760603660031901126100dd5760043567ffffffffffffffff81116100dd576101139036906004016104ed565b9060243567ffffffffffffffff81116100dd576101349036906004016104ed565b9260443567ffffffffffffffff81116100dd576101559036906004016104ed565b92909185811480610263575b156102265760005b81811061017257005b806101b7610183600193858a610561565b3561018f838b88610561565b3561019b848a8a610561565b35906101a561051e565b92835260208301526040820152610571565b7f90b0bfc26dad846454f3c33277724ae4c0a1df636a370e3876fc9aef16cd62196101e382858a610561565b356101ef838b88610561565b359061021d6101ff858b8b610561565b35604051938493846040919493926060820195825260208201520152565b0390a101610169565b60405162461bcd60e51b8152602060048201526015602482015274082e4e4c2f240d8cadccee8d040dad2e6dac2e8c6d605b1b6044820152606490fd5b50838614610161565b346100dd5760203660031901126100dd576004356000548110156100dd576102939061049d565b5080546102c060026001840154930154604051938493846040919493926060820195825260208201520152565b0390f35b346100dd5760203660031901126100dd57600435600060406102e461051e565b82815282602082015201526000548110156103305761030d61030760609261049d565b5061053e565b61032e60405180926040809180518452602081015160208501520151910152565bf35b60405162461bcd60e51b815260206004820152600c60248201526b4f7574206f662072616e676560a01b6044820152606490fd5b346100dd5760003660031901126100dd576020600054604051908152f35b346100dd5760003660031901126100dd5760005467ffffffffffffffff81116104875760405190601f19603f8260051b0116820182811067ffffffffffffffff82111761048757604052808252602082019081600080527f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e5636000915b8383106104695784866040519182916020830190602084525180915260408301919060005b818110610431575050500390f35b91935091602060608261045b60019488516040809180518452602081015160208501520151910152565b019401910191849392610423565b600360206001926104798561053e565b8152019201920191906103fe565b634e487b7160e01b600052604160045260246000fd5b6000548110156104d75760008080526003919091027f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e5630191565b634e487b7160e01b600052603260045260246000fd5b9181601f840112156100dd5782359167ffffffffffffffff83116100dd576020808501948460051b0101116100dd57565b604051906060820182811067ffffffffffffffff82111761048757604052565b90600261054961051e565b92805484526001810154602085015201546040830152565b91908110156104d75760051b0190565b600054680100000000000000008110156104875760018101600055600080548210156105c057808052602090206003919091020190604081600292518455602081015160018501550151910155565b634e487b7160e01b81526032600452602490fdfea264697066735822122010fc13d35501ed77b1e98b00e37afbc7c7f5270510e4586eaa0d605cf6cc0a3c64736f6c634300081c0033"
+  }
+  
