@@ -1,16 +1,19 @@
-// scripts/deploy.js
-
 const hre = require("hardhat");
 
 async function main() {
-  const TransactionLogger = await hre.ethers.getContractFactory("TransactionLogger");
-  const contract = await TransactionLogger.deploy();
-  await contract.waitForDeployment();
+  const [deployer] = await hre.ethers.getSigners();
 
-  console.log("✅ Contract deployed to:", await contract.getAddress());
+  console.log("Deploying contract from address:", deployer.address);
+
+  // const Contract = await hre.ethers.getContractFactory("TransactionLogger");
+  const Contract = await hre.ethers.getContractFactory("DetailTransaction");
+  const contract = await Contract.deploy();
+
+  await contract.waitForDeployment();
+  console.log("Contract deployed to:", await contract.getAddress());
 }
 
 main().catch((error) => {
-  console.error("❌ Deployment failed:", error);
+  console.error(error);
   process.exitCode = 1;
 });
