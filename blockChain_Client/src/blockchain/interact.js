@@ -1,4 +1,4 @@
-import { getContract } from './contract';
+import { getContract } from './contractTransaction';
 
 // Kirim satu data transaksi
 export const sendTransaksiToBlockchain = async (transaksi) => {
